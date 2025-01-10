@@ -34,8 +34,8 @@ trait Validation
    */
   protected function validateItemKeys(Collection $item): Collection
   {
-    $databaseConfigKey = config('meta-data.key_name');
-    $databaseConfigValueKey = config('meta-data.value_name');
+    $databaseConfigKey = $this->META_DATA_KEY;
+    $databaseConfigValueKey = $this->META_DATA_VALUE;
 
     if (!$item->has($databaseConfigKey) || !$item->has($databaseConfigValueKey)) {
       throw new Exception('The provided item does not have the required keys, or config data does not exists.');

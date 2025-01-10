@@ -64,8 +64,8 @@ trait Resolver
     $item = collect($item);
 
     return $item->map(fn($value, $key) => [
-      config('meta-data.key_name') => $key,
-      config('meta-data.value_name') => $value
+      $this->META_DATA_KEY => $key,
+      $this->META_DATA_VALUE => $value
     ])->values();
   }
 
