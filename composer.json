@@ -1,0 +1,17 @@
+{
+  "name": "joe/meta-data",
+  "description": "This service provides a dynamic and flexible way to manage key-value structured data, allowing developers to seamlessly handle unknown or loosely defined attributes in their Laravel applications. By leveraging Laravel's powerful Collections and Eloquent ORM, the service introduces a structured approach to store, retrieve, and manipulate data stored as key-value pairs.",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "Joe\\MetaData\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Youssef bibawy",
+      "email": "youssefbibway@gmail.com"
+    }
+  ],
+  "require": {}
+}
