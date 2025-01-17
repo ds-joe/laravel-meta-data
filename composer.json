@@ -13,5 +13,7 @@
       "email": "youssefbibway@gmail.com"
     }
   ],
-  "require": {}
+  "require": {
+    "illuminate/support": "^11.38"
+  }
 }

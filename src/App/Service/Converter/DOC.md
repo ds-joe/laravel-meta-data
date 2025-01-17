@@ -19,8 +19,9 @@ Decodes undotted data into a Laravel collection.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $data = ['key1.key2' => 'value'];
-$decoded = $this->decode($data);
+$decoded = Converter::decode($data);
 // Result: ['key1' => ['key2' => 'value']]
 ```
 
@@ -42,8 +43,9 @@ Resolves and decodes a single metadata item.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $item = ['database_key' => 'key', 'database_value' => 'value'];
-$decodedItem = $this->resolveAndDecodeItem($item);
+$decodedItem = Converter::resolveAndDecodeItem($item);
 // Result: ['key' => 'value']
 ```
 
@@ -65,11 +67,12 @@ Resolves and decodes multiple metadata items.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $items = [
   ['database_key' => 'key1', 'database_value' => 'value1'],
   ['database_key' => 'key2', 'database_value' => 'value2']
 ];
-$decodedItems = $this->resolveAndDecodeItems($items);
+$decodedItems = Converter::resolveAndDecodeItems($items);
 // Result: ['key1' => 'value1', 'key2' => 'value2']
 ```
 
@@ -91,8 +94,9 @@ Encodes data into dotted notation.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $data = ['key1' => ['key2' => 'value']];
-$encoded = $this->encode($data);
+$encoded = Converter::encode($data);
 // Result: ['key1.key2' => 'value']
 ```
 
@@ -114,8 +118,9 @@ Resolves and encodes a single metadata item.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $item = ['database_key' => 'key', 'database_value' => 'value'];
-$encodedItem = $this->resolveAndEncodeItem($item);
+$encodedItem = Converter::resolveAndEncodeItem($item);
 // Result: ['key' => 'value']
 ```
 
@@ -137,11 +142,12 @@ Resolves and encodes multiple metadata items.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $items = [
   ['database_key' => 'key1', 'database_value' => 'value1'],
   ['database_key' => 'key2', 'database_value' => 'value2']
 ];
-$encodedItems = $this->resolveAndEncodeItems($items);
+$encodedItems = Converter::resolveAndEncodeItems($items);
 // Result: ['key1' => 'value1', 'key2' => 'value2']
 ```
 
@@ -163,8 +169,9 @@ Resolves a database item into a metadata key-value pair.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $item = ['database_key' => 'key', 'database_value' => 'value'];
-$resolved = $this->resolveMetadataItem($item);
+$resolved = Converter::resolveMetadataItem($item);
 // Result: ['key' => 'value']
 ```
 
@@ -186,11 +193,12 @@ Resolves multiple database items into metadata key-value pairs.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $items = [
   ['database_key' => 'key1', 'database_value' => 'value1'],
   ['database_key' => 'key2', 'database_value' => 'value2']
 ];
-$resolvedItems = $this->resolveMetadataItems($items);
+$resolvedItems = Converter::resolveMetadataItems($items);
 // Result: ['key1' => 'value1', 'key2' => 'value2']
 ```
 
@@ -211,8 +219,9 @@ Converts a metadata item back into key-value format.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $item = ['key' => 'value'];
-$converted = $this->convertItemToMetadata($item);
+$converted = Converter::convertItemToMetadata($item);
 // Result: [['key' => 'key', 'value' => 'value']]
 ```
 
@@ -233,11 +242,12 @@ Converts multiple metadata items back into key-value format.
 
 **Example:**
 ```php
+use Joe\MetaData\App\Facade\Service\Converter;
 $items = [
   ['key1' => 'value1'],
   ['key2' => 'value2']
 ];
-$convertedItems = $this->convertItemsToMetadata($items);
+$convertedItems = Converter::convertItemsToMetadata($items);
 // Result: [[['key' => 'key1', 'value' => 'value1']], [['key' => 'key2', 'value' => 'value2']]]
 ```
 ---
