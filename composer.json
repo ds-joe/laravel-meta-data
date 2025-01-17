@@ -1,7 +1,9 @@
 {
-  "name": "joe/meta-data",
+  "name": "isolution/meta-data",
   "description": "This service provides a dynamic and flexible way to manage key-value structured data, allowing developers to seamlessly handle unknown or loosely defined attributes in their Laravel applications. By leveraging Laravel's powerful Collections and Eloquent ORM, the service introduces a structured approach to store, retrieve, and manipulate data stored as key-value pairs.",
   "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "Joe\\MetaData\\": "src/"
@@ -14,6 +16,14 @@
     }
   ],
   "require": {
+    "php": ">=8.0",
     "illuminate/support": "^11.38"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Joe\\MetaData\\Providers\\MetaDataProvider"
+      ]
+    }
   }
 }
