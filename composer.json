@@ -17,7 +17,7 @@
   ],
   "require": {
     "php": ">=8.0",
-    "illuminate/support": "^11.38"
+    "illuminate/support": "^10.0"
   },
   "extra": {
     "laravel": {
